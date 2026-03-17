@@ -12,20 +12,26 @@ Then process and organize notes in the Obsidian vault at $VAULT_PATH, following 
 - `daily/` — daily notes, format YYYY-MM-DD.md
 - `projects/` — one file per project
 - `people/team/` — one file per person who warrants a dedicated note (e.g. direct reports)
-- `tasks/In Progress.md` — your active personal tasks across projects
+- `tasks/In Progress.md` — your open personal tasks across projects
+- `tasks/Completed.md` — archived completed tasks with dates
 - `memory/` — Claude's memory files
 
-## Daily Note Format
+## Note Format
 - Frontmatter: plain text `create date:` and `update date:` (not YAML)
-- Section heading: `## [[Project or Person]] - Type` where Type is a word describing the meeting/note context (e.g. Bugs, Standup, Sync, Notes)
-- Reference line: `→ [[projects/Project Name#heading]]`
-- Summary: one line describing the nature of what was captured (not a repeat of the detail)
+- Tasks use `- [ ]` and `- [x]`
+
+## Daily Note Format
+Daily notes are a capture surface, not a calendar mirror. When creating a daily note:
+1. **Schedule feedback bullets** at the top — conflicts, OOO impacts, notable observations (1–3 bullets)
+2. **Meeting placeholder sections** — one `## [[Project or Person]] - Type` per project-related meeting or 1-1; no full schedule table
+3. **Exclude** operational recurring meetings with no project context and calendar blocks
+
+Section heading format: `## [[Project or Person]] - Type` where Type describes the context (e.g. Sync, 1-1, Bugs, Notes)
 
 ## Moving Notes Out of Daily
-- **Project-related notes** → move full detail to project file, leave link + one-line summary in daily
+- **Project-related notes** → move full detail to project file, leave `→ [[projects/Project Name#heading]]` + one-line summary in daily
 - **Person-related notes** (1:1s, individual meetings) → move to person file in `people/team/`, same treatment
 - **Non-project, non-person notes** → leave in daily as-is
-- Completed tasks stay in the project file; do not surface them in In Progress.md
 
 ## Project File Conventions
 - Date sections use `## M/D/YY` headings (enables anchor links from daily notes)
@@ -43,8 +49,8 @@ Then process and organize notes in the Obsidian vault at $VAULT_PATH, following 
 ## Tasks
 - Personal open tasks → `tasks/In Progress.md` under the relevant `## [[Project]]` section
 - Use `- [ ]` for open, `- [x]` for done
-- Completed items belong in the project file, not In Progress.md
 - **After processing any notes, always scan for personal action items and add them to In Progress.md** — includes tasks explicitly assigned, follow-ups mentioned, and new projects taken on
+- **Completed tasks** → move to `tasks/Completed.md` under `## [[Project]]` with the completion date (from notes) or processing date if unknown; do not leave `- [x]` items in In Progress.md or project files
 
 ## Keeping Memory Up to Date
 At the end of every notes session, update the relevant memory files:
