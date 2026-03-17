@@ -40,6 +40,12 @@ Section heading format: `## [[Project or Person]] - Type` where Type describes t
 - Bold person names within a date section for scannability
 - Link people with dedicated files using [[wikilinks]]; use plain text for everyone else
 
+## Meeting-to-Project Mappings
+Some recurring meetings map to a specific project file rather than their meeting name:
+- **CAT RAA** and **CAT Leads + PMs** → `[[CAT]]` (`projects/CAT.md`)
+
+Add mappings here as they are established.
+
 ## Wikilinks
 - Only create [[wikilinks]] for people who have dedicated files in `people/team/`
 - Everyone else — plain text only, no wikilinks, no person files
