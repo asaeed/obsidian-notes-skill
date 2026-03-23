@@ -3,8 +3,9 @@ Before doing anything else, read the following memory files from your vault:
 - $VAULT_PATH/memory/team.md
 - $VAULT_PATH/memory/projects.md
 - $VAULT_PATH/memory/conversations.md
+- $VAULT_PATH/memory/calendar.md
 
-Add any additional memory files you use (e.g. calendar.md, images.md) to the list above.
+Add any additional memory files you use to the list above.
 
 Then process and organize notes in the Obsidian vault at $VAULT_PATH, following these conventions:
 
@@ -26,9 +27,10 @@ Then process and organize notes in the Obsidian vault at $VAULT_PATH, following 
 
 ## Daily Note Format
 Daily notes are a capture surface, not a calendar mirror. When creating a daily note:
-1. **Schedule feedback bullets** at the top — conflicts, OOO impacts, notable observations (1–3 bullets)
-2. **Meeting placeholder sections** — one `## [[Project or Person]] - Type` per project-related meeting or 1-1; no full schedule table
-3. **Exclude** operational recurring meetings with no project context and calendar blocks
+1. **Check `memory/calendar.md`** for the day's scheduled meetings before building the note
+2. **Schedule feedback bullets** at the top — conflicts, OOO impacts, notable observations (1–3 bullets)
+3. **Meeting placeholder sections** — one `## [[Project or Person]] - Type` per project-related meeting or 1-1; no full schedule table
+4. **Exclude** operational recurring meetings with no project context and calendar blocks
 
 Section heading format: `## [[Project or Person]] - Type` where Type describes the context (e.g. Sync, 1-1, Bugs, Notes)
 
@@ -46,6 +48,15 @@ Section heading format: `## [[Project or Person]] - Type` where Type describes t
 
 ## Meeting-to-Project Mappings
 Some recurring meetings map to a specific project file rather than their meeting name. Check `memory/workspace.md` for the current mappings before filing notes from recurring meetings.
+
+## Person File Conventions
+Each person file in `people/team/` should have a `## Context` block at the very top (before `## Referenced In`) with:
+- **Role** — title or function
+- **1-1** — cadence and time (both EDT and GMT+1)
+- **Current focus** — active projects or workstreams
+- **Note** — any standing context worth knowing before a 1-1 (optional)
+
+Update `## Context` whenever role, focus, or cadence changes. It should reflect current state, not history — history lives in the dated meeting notes below.
 
 ## Wikilinks
 - Only create [[wikilinks]] for people who have dedicated files in `people/team/`
@@ -75,6 +86,7 @@ At the end of every notes session, update the relevant memory files:
 - Archive files are consolidated by week: one file per week named `Week of YYYY-MM-DD.md` (Monday date)
 - Append the day's content under a `## Weekday, Month D` heading in the week file
 - Move the original daily file to `trash/` after consolidating (never delete)
+- After all days are consolidated, prepend a `## Week Summary` section at the very top of the archive file with 3–5 bullets covering key decisions, notable events, and project movement for the week
 
 ## Deleting Files
 - Never permanently delete files from the vault
