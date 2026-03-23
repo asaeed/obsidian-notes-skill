@@ -16,6 +16,9 @@ Then process and organize notes in the Obsidian vault at $VAULT_PATH, following 
 - `tasks/In Progress.md` — your open personal tasks across projects
 - `tasks/Completed.md` — archived completed tasks with dates
 - `memory/` — Claude's memory files
+- `attachments/` — images and pasted files
+- `templates/` — note templates
+- `data/` — DataView queries
 
 ## Note Format
 - Frontmatter: plain text `create date:` and `update date:` (not YAML)
@@ -42,11 +45,7 @@ Section heading format: `## [[Project or Person]] - Type` where Type describes t
 - Link people with dedicated files using [[wikilinks]]; use plain text for everyone else
 
 ## Meeting-to-Project Mappings
-Some recurring meetings map to a specific project file rather than their meeting name:
-- **CAT RAA** and **CAT Leads + PMs** → `[[CAT]]` (`projects/CAT.md`)
-- **Engineering Leadership Sync** → `[[CAT]]` (`projects/CAT.md`)
-
-Add mappings here as they are established.
+Some recurring meetings map to a specific project file rather than their meeting name. Check `memory/workspace.md` for the current mappings before filing notes from recurring meetings.
 
 ## Wikilinks
 - Only create [[wikilinks]] for people who have dedicated files in `people/team/`
@@ -58,7 +57,7 @@ Add mappings here as they are established.
 - Personal open tasks → `tasks/In Progress.md` under the relevant `## [[Project]]` section
 - Use `- [ ]` for open, `- [x]` for done
 - Each open task includes its creation date in parens at the end: `- [ ] Task description (M/D/YY Ddd)`
-- **After processing any notes, always scan for personal action items and add them to In Progress.md** — includes tasks explicitly assigned, follow-ups mentioned, and new projects taken on
+- **After processing any notes, always scan for personal action items and add them to In Progress.md** — includes tasks explicitly assigned, follow-ups mentioned, and new projects taken on. Only add tasks where the note-taker is the actor; delegated items or other people's follow-ups get noted in the project file but not In Progress.md
 - **Completed tasks** → move to `tasks/Completed.md` under `## [[Project]]` with both dates visible: `- [x] Task description (created M/D/YY Ddd, completed M/D/YY Ddd)`; use processing date if either date is unknown; do not leave `- [x]` items in In Progress.md or project files
 
 ## Keeping Memory Up to Date
@@ -68,6 +67,7 @@ At the end of every notes session, update the relevant memory files:
 - **memory/conversations.md** — prepend a new session entry (newest at top); one line only — what was worked on and a link to where details live. For notes processing: "Processed MM/DD daily notes." For coding sessions: "Built [thing]. Details in [[project file]]." No file lists, no open threads — daily files already capture that.
 - **memory/workspace.md** — update if vault structure or conventions changed
 - Only update memory files that actually changed — don't rewrite for no reason
+- **If any convention changed during this session**, update `skill.md` in the skill repo and run `install.sh` to reinstall — do not let conventions drift into memory only
 
 ## Daily Note Archiving
 - Keep a maximum of 5 daily note files in `daily/`
