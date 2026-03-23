@@ -9,7 +9,8 @@ Add any additional memory files you use (e.g. calendar.md, images.md) to the lis
 Then process and organize notes in the Obsidian vault at $VAULT_PATH, following these conventions:
 
 ## Vault Structure
-- `daily/` — daily notes, format YYYY-MM-DD.md
+- `daily/` — daily notes, format `YYYY-MM-DD Ddd.md` (e.g. `2026-03-23 Mon.md`; day abbreviation capitalized)
+- `daily/archive/` — weekly archive files, format `Week of YYYY-MM-DD.md` (date = Monday of that week); each file consolidates all daily notes for that week
 - `projects/` — one file per project
 - `people/team/` — one file per person who warrants a dedicated note (e.g. direct reports)
 - `tasks/In Progress.md` — your open personal tasks across projects
@@ -34,7 +35,7 @@ Section heading format: `## [[Project or Person]] - Type` where Type describes t
 - **Non-project, non-person notes** → leave in daily as-is
 
 ## Project File Conventions
-- Date sections use `## M/D/YY` headings (enables anchor links from daily notes)
+- Date sections use `## M/D/YY Ddd` headings (e.g. `## 3/20/26 Fri`; enables anchor links from daily notes)
 - Always reverse chronological order — newest date at top, undated/background content at bottom
 - Add new content under a new dated `##` heading at the top
 - Bold person names within a date section for scannability
@@ -43,6 +44,7 @@ Section heading format: `## [[Project or Person]] - Type` where Type describes t
 ## Meeting-to-Project Mappings
 Some recurring meetings map to a specific project file rather than their meeting name:
 - **CAT RAA** and **CAT Leads + PMs** → `[[CAT]]` (`projects/CAT.md`)
+- **Engineering Leadership Sync** → `[[CAT]]` (`projects/CAT.md`)
 
 Add mappings here as they are established.
 
@@ -55,16 +57,24 @@ Add mappings here as they are established.
 ## Tasks
 - Personal open tasks → `tasks/In Progress.md` under the relevant `## [[Project]]` section
 - Use `- [ ]` for open, `- [x]` for done
+- Each open task includes its creation date in parens at the end: `- [ ] Task description (M/D/YY Ddd)`
 - **After processing any notes, always scan for personal action items and add them to In Progress.md** — includes tasks explicitly assigned, follow-ups mentioned, and new projects taken on
-- **Completed tasks** → move to `tasks/Completed.md` under `## [[Project]]` with the completion date (from notes) or processing date if unknown; do not leave `- [x]` items in In Progress.md or project files
+- **Completed tasks** → move to `tasks/Completed.md` under `## [[Project]]` with both dates visible: `- [x] Task description (created M/D/YY Ddd, completed M/D/YY Ddd)`; use processing date if either date is unknown; do not leave `- [x]` items in In Progress.md or project files
 
 ## Keeping Memory Up to Date
 At the end of every notes session, update the relevant memory files:
 - **memory/projects.md** — add any new projects; update status of existing ones
 - **memory/team.md** — add any new people mentioned; update roles or context if changed
-- **memory/conversations.md** — prepend a new session entry (newest at top); include: what was done, preferences confirmed, open threads
+- **memory/conversations.md** — prepend a new session entry (newest at top); one line only — what was worked on and a link to where details live. For notes processing: "Processed MM/DD daily notes." For coding sessions: "Built [thing]. Details in [[project file]]." No file lists, no open threads — daily files already capture that.
 - **memory/workspace.md** — update if vault structure or conventions changed
 - Only update memory files that actually changed — don't rewrite for no reason
+
+## Daily Note Archiving
+- Keep a maximum of 5 daily note files in `daily/`
+- When creating a new daily note would exceed 5, move the oldest into `daily/archive/`
+- Archive files are consolidated by week: one file per week named `Week of YYYY-MM-DD.md` (Monday date)
+- Append the day's content under a `## Weekday, Month D` heading in the week file
+- Move the original daily file to `trash/` after consolidating (never delete)
 
 ## Deleting Files
 - Never permanently delete files from the vault
