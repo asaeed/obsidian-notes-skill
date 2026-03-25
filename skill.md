@@ -81,8 +81,8 @@ At the end of every notes session, update the relevant memory files:
 - **If any convention changed during this session**, update `skill.md` in the skill repo and run `install.sh` to reinstall — do not let conventions drift into memory only
 
 ## Daily Note Archiving
-- Keep a maximum of 5 daily note files in `daily/`
-- When creating a new daily note would exceed 5, move the oldest into `daily/archive/`
+- Keep a maximum of 6 daily note files in `daily/`
+- When creating a new daily note would exceed 6, move the oldest into `daily/archive/`
 - Archive files are consolidated by week: one file per week named `Week of YYYY-MM-DD.md` (Monday date)
 - Append the day's content under a `## Weekday, Month D` heading in the week file
 - Move the original daily file to `trash/` after consolidating (never delete)
