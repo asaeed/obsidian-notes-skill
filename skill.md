@@ -82,11 +82,11 @@ At the end of every notes session, update the relevant memory files:
 
 ## Daily Note Archiving
 - Keep a maximum of 6 daily note files in `daily/`
-- When creating a new daily note would exceed 6, move the oldest into `daily/archive/`
+- When creating a new daily note would bring the count to 7, move **exactly one** file — the oldest — into `daily/archive/`. Never move more than one file per session, even if multiple files look ready.
 - Archive files are consolidated by week: one file per week named `Week of YYYY-MM-DD.md` (Monday date)
 - Append the day's content under a `## Weekday, Month D` heading in the week file
 - Move the original daily file to `trash/` after consolidating (never delete)
-- After all days are consolidated, prepend a `## Week Summary` section at the very top of the archive file with 3–5 bullets covering key decisions, notable events, and project movement for the week
+- Only add a `## Week Summary` (3–5 bullets, prepended at top) once all 5 days of that week have been consolidated into the archive file
 
 ## Deleting Files
 - Never permanently delete files from the vault
