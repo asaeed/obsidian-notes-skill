@@ -34,6 +34,13 @@ Daily notes are a capture surface, not a calendar mirror. When creating a daily 
 
 Section heading format: `## [[Project or Person]] - Type` where Type describes the context (e.g. Sync, 1-1, Bugs, Notes)
 
+## Adding Notes to Daily (Capture Mode)
+When the user provides a transcript or raw notes and says to add them to the daily notes file:
+- Add a **new section** to the daily note — do NOT move content to project files
+- A single day may have multiple sections for the same project (multiple meetings); each gets its own `## [[Project]] - Type` heading
+- Leave any existing sections on the same project untouched
+- Only move notes to project files when the user explicitly says to "process" notes
+
 ## Moving Notes Out of Daily
 - **Project-related notes** → move full detail to project file, leave `→ [[projects/Project Name#heading]]` + one-line summary in daily
 - **Person-related notes** (1:1s, individual meetings) → move to person file in `people/team/`, same treatment
