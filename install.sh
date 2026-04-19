@@ -1,10 +1,10 @@
 #!/bin/bash
-# Installs the obsidian skill to ~/.claude/commands/obsidian.md
+# Installs the obsidian-notes skill to ~/.claude/commands/obsidian-notes.md
 # Usage: ./install.sh [vault-path]
 # Default vault path: ~/Documents/Obsidian Vault
 
 VAULT_PATH="${1:-$HOME/Documents/Obsidian Vault}"
-DEST="$HOME/.claude/commands/obsidian.md"
+DEST="$HOME/.claude/commands/obsidian-notes.md"
 
 if [ ! -d "$VAULT_PATH" ]; then
   echo "Error: vault not found at '$VAULT_PATH'"

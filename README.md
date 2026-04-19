@@ -8,7 +8,7 @@ A Claude Code skill for processing, organizing, and maintaining an Obsidian vaul
 
 ```mermaid
 flowchart TD
-    A([User adds notes to daily file]) --> B[Invoke /obsidian]
+    A([User adds notes to daily file]) --> B[Invoke /obsidian-notes]
     B --> C[Read memory files\nworkspace · team · projects · conversations]
 
     C --> D{What type\nof note?}
@@ -48,14 +48,14 @@ flowchart TD
 1. Copy `skill.md` to your Claude Code commands folder:
 
 ```bash
-cp skill.md ~/.claude/commands/obsidian.md
+cp skill.md ~/.claude/commands/obsidian-notes.md
 ```
 
 2. Replace `$VAULT_PATH` in the file with the absolute path to your Obsidian vault:
 
 ```bash
 VAULT_PATH="/Users/yourname/Documents/Obsidian Vault"
-sed -i '' "s|\$VAULT_PATH|$VAULT_PATH|g" ~/.claude/commands/obsidian.md
+sed -i '' "s|\$VAULT_PATH|$VAULT_PATH|g" ~/.claude/commands/obsidian-notes.md
 ```
 
 3. Create the required folders in your vault if they don't exist:
@@ -85,14 +85,14 @@ To have the skill load automatically whenever you mention notes, add this to you
 ```markdown
 ## Obsidian Notes Skill
 Whenever I mention taking, capturing, retrieving, or processing notes,
-invoke the /obsidian skill before doing anything else.
+invoke the /obsidian-notes skill before doing anything else.
 ```
 
 ---
 
 ## Configuration
 
-Edit `~/.claude/commands/obsidian.md` to customize:
+Edit `~/.claude/commands/obsidian-notes.md` to customize:
 
 | Section | What to change |
 |---|---|
